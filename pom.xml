@@ -17,7 +17,6 @@
   </properties>
 
   <dependencies>
-    <!-- Corrected to JUnit 4.x for modern usage -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -28,6 +27,7 @@
 
   <build>
     <plugins>
+      <!-- Compiler plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -36,22 +36,22 @@
           <release>8</release>
         </configuration>
       </plugin>
-    </plugins>
 
-     <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-jar-plugin</artifactId>
-      <version>3.3.0</version>
-      <configuration>
-        <archive>
-          <manifest>
-            <!-- Replace with your fully-qualified main class name -->
-            <mainClass>com.example.Main</mainClass>
-          </manifest>
-        </archive>
-      </configuration>
-    </plugin>
-  </plugins>
+      <!-- Jar plugin with main class -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <!-- Replace with your actual main class -->
+              <mainClass>com.example.Main</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
 
     <finalName>Food-system-xyz</finalName>
   </build>
