@@ -471,3 +471,34 @@ kubectl get svc
 
 minikube stop
 
+
+
+Create Jenkins job:
+New Item → Enter job name (example: loginapp)
+Select Pipeline → OK
+Go to Build Triggers
+Enable: GitHub hook trigger for GITScm polling
+Scroll to Pipeline section
+Select: Pipeline script from SCM
+SCM: Git
+Paste your GitHub Repository URL
+Branch: */main (or your correct branch)
+Add credentials if the repo is private
+Click Save
+
+Go to GitHub Repository
+Settings → Webhooks → Add Webhook
+Payload URL: https://YOUR-NGROK-URL/github-webhook/
+
+Replace YOUR-NGROK-URL with your actual ngrok HTTPS URL
+Content type: application/json
+Select: Just the push event
+Click Add Webhook
+Webhook should show Green Tick ✔
+
+Test:
+Make a small change in local repo
+git add .
+git commit -m "Test webhook"
+git push
+Jenkins job should automatically trigger and run build
