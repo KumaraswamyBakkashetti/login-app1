@@ -473,6 +473,19 @@ minikube stop
 
 
 
+Open Command Prompt and run:
+ngrok http 8080
+Copy the HTTPS URL shown (example: https://abcd1234.ngrok-free.app)
+
+Open Jenkins: http://localhost:8080
+
+Go to Manage Jenkins → Configure System
+Scroll to GitHub section
+Enable GitHub Server
+Enable Manage hooks
+Click Save
+
+
 Create Jenkins job:
 New Item → Enter job name (example: loginapp)
 Select Pipeline → OK
