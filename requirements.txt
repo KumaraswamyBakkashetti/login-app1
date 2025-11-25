@@ -368,3 +368,106 @@ For assignment or project submission, you can capture:
 
 End of file.
 
+
+Q2 – Minikube (Nginx Service Deployment) – Detailed Steps
+
+Objective:
+Deploy and verify an NGINX service in Minikube and show results using commands and browser.
+
+--------------------------------------------------------
+
+0️⃣ Prerequisites:
+✔ Docker Desktop installed and running
+✔ Minikube installed
+✔ kubectl installed
+
+Test:
+docker --version
+minikube version
+kubectl version --client
+
+--------------------------------------------------------
+
+1️⃣ Start Minikube Cluster
+
+Command:
+minikube start --driver=docker
+
+What this does:
+- Creates a local Kubernetes cluster inside Docker
+- Configures kubectl to talk to Minikube
+
+Verify:
+kubectl get nodes
+
+Expected:
+minikube   Ready
+
+--------------------------------------------------------
+
+2️⃣ Create NGINX Deployment
+
+Command:
+kubectl create deployment my-nginx --image=nginx
+
+What this does:
+- Creates a Deployment that manages an nginx Pod
+
+Verify:
+kubectl get pods
+
+Expected:
+my-nginx-xxxxxx   1/1   Running
+
+--------------------------------------------------------
+
+3️⃣ Expose Service to Access from Browser
+
+Command:
+kubectl expose deployment my-nginx --port=80 --type=NodePort
+
+What this does:
+- Creates a Service with a NodePort for external access
+
+Check service details:
+kubectl get svc
+
+--------------------------------------------------------
+
+4️⃣ Get Service URL Automatically
+
+Command:
+minikube service my-nginx --url
+
+You get a URL like:
+http://192.168.xx.xx:3xxxx
+
+Copy and paste into browser → NGINX welcome page appears
+
+--------------------------------------------------------
+
+5️⃣ EXACT Requirement from Lab: localhost:8090
+
+Command:
+kubectl port-forward service/my-nginx 8090:80
+
+Now open:
+http://localhost:8090
+
+You will see:
+Welcome to nginx!
+
+--------------------------------------------------------
+
+6️⃣ Display Pod and Service Listing (for screenshots)
+
+Commands:
+kubectl get pods
+kubectl get svc
+
+--------------------------------------------------------
+
+7️⃣ Shutdown Minikube (Optional)
+
+minikube stop
+
