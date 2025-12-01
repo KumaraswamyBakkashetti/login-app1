@@ -1,0 +1,1734 @@
+EXPERIMENT – 2: Exploring Git Local and Remote Repository Commands on Multi-Folder Project
+
+OBJECTIVE:
+To understand and execute local and remote Git operations such as global configuration, cloning, committing, pushing, branching, conflict handling, and synchronization using Git and GitHub.
+
+PART–A: Git Global Configuration
+
+Step-1: Open Git Bash.
+
+Step-2: Configure Git Username:
+git config --global user.name "Your_Name"
+
+Step-3: Configure Git Email:
+git config --global user.email "yourmail@gmail.com"
+
+Step-4: Verify Git Configuration:
+git config --global --list
+
+
+
+PART–B: Cloning a Remote Repository
+
+Step-5: Clone a GitHub Repository:
+git clone https://github.com/username/repository-name.git
+
+Step-6: Enter the Project Folder:
+cd repository-name
+
+
+
+PART–C: Basic Local Git Operations
+
+Step-7: Check Git Status:
+git status
+
+Step-8: Add All Files:
+git add .
+
+Step-9: Commit the Files:
+git commit -m "Initial commit"
+
+Step-10: Push to Remote Repository:
+git push origin main
+
+
+
+SCENARIO–1: Handling “Rejected – Non-Fast-Forward” Error
+
+Step-11: Pull with Rebase:
+git pull --rebase origin main
+
+Step-12: Push Again:
+git push origin main
+
+
+
+SCENARIO–2: Push Feature Branch Without Affecting main Branch
+
+Step-13: Create a New Branch:
+git checkout -b feature1
+
+Step-14: Push Feature Branch:
+git push origin feature1
+
+
+
+SCENARIO–3: Sync Local Repository After New Branch Is Added Remotely
+
+Step-15: Fetch All Branches:
+git fetch origin
+
+Step-16: Checkout Required Branch:
+git checkout branch-name
+
+
+
+SCENARIO–4: Pull Latest Changes Without Losing Local Changes
+
+Step-17: Stash Current Changes:
+git stash
+
+Step-18: Pull with Rebase:
+git pull --rebase origin main
+
+Step-19: Reapply Stashed Changes:
+git stash pop
+
+
+
+SCENARIO–5: Remove Sensitive File from Remote Repository
+
+Step-20: Remove File from Git Tracking:
+git rm --cached filename
+
+Step-21: Commit the Change:
+git commit -m "Removed sensitive file"
+
+Step-22: Push to Remote:
+git push origin main
+
+
+
+SCENARIO–6: Update Feature Branch with Latest main Branch
+
+Step-23: Switch to Feature Branch:
+git checkout feature1
+
+Step-24: Fetch Latest Changes:
+git fetch origin
+
+Step-25: Rebase Feature Branch:
+git rebase origin/main
+
+
+
+SCENARIO–7: Change Remote Repository URL
+
+Step-26: Remove Old Remote:
+git remote remove origin
+
+Step-27: Add New Remote:
+git remote add origin https://github.com/username/new-repo.git
+
+Step-28: Push to New Repository:
+git push origin main
+
+
+
+SCENARIO–8: Local Branch Behind Remote (Keep Local Changes)
+
+Step-29: Stash Local Changes:
+git stash
+
+Step-30: Pull with Rebase:
+git pull --rebase origin main
+
+Step-31: Apply Stashed Changes:
+git stash pop
+
+
+
+SCENARIO–9: Resolve Merge Conflicts
+
+Step-32: Pull Latest Changes:
+git pull origin main
+
+Step-33: Open Conflicted Files and Remove Conflict Markers:
+<<<<<
+=====
+>>>>>
+
+Step-34: Add Resolved Files:
+git add .
+
+Step-35: Commit the Resolution:
+git commit -m "Resolved merge conflict"
+
+
+
+SCENARIO–10: Delete a Remote Branch
+
+Step-36: Delete the Remote Branch:
+git push origin --delete feature1
+
+
+
+FINAL RESULT:
+Git global configuration was completed. The repository was cloned successfully. Files were added, committed, and pushed to GitHub. Branch creation, conflict resolution, stash usage, remote synchronization, and branch deletion operations were executed successfully.
+
+
+
+
+EXPERIMENT – 3: Collaborative Coding Using Git and GitHub
+
+OBJECTIVE:
+To understand collaborative software development using Git and GitHub by performing operations such as cloning, branching, committing, pushing, forking, and creating pull requests among multiple users.
+
+PART–A: Clone Repository from GitHub Organization
+
+Step-1: Open Git Bash.
+
+Step-2: Clone the team repository:
+git clone https://github.com/organization-name/repository-name.git
+
+Step-3: Enter the project directory:
+cd repository-name
+
+Step-4: Check the repository status:
+git status
+
+
+
+PART–B: Create a Feature Branch and Modify Files
+
+Step-5: Create a new feature branch:
+git checkout -b feature-branch
+
+Step-6: Open any file and edit the content.
+
+Step-7: Save the file.
+
+Step-8: Check the status:
+git status
+
+Step-9: Add the modified file:
+git add .
+
+Step-10: Commit the changes:
+git commit -m "Feature update"
+
+
+
+PART–C: Push Feature Branch to Remote Repository
+
+Step-11: Push the feature branch:
+git push origin feature-branch
+
+
+
+PART–D: Create Pull Request
+
+Step-12: Open GitHub repository in browser.
+
+Step-13: Click on "Compare & Pull Request".
+
+Step-14: Add title and description.
+
+Step-15: Click on "Create Pull Request".
+
+Step-16: Team lead reviews and merges the pull request.
+
+
+
+PART–E: Fork a Repository
+
+Step-17: Open GitHub repository in browser.
+
+Step-18: Click on "Fork".
+
+Step-19: Select your GitHub account to fork the repository.
+
+Step-20: Forked repository is created in your GitHub account.
+
+
+
+PART–F: Clone Forked Repository
+
+Step-21: Copy the forked repository URL.
+
+Step-22: Clone the forked repository:
+git clone https://github.com/your-username/forked-repo.git
+
+Step-23: Enter the forked repository:
+cd forked-repo
+
+
+
+PART–G: Create Branch in Forked Repository
+
+Step-24: Create a new branch:
+git checkout -b fork-feature
+
+Step-25: Modify the README file.
+
+Step-26: Save the changes.
+
+Step-27: Add the file:
+git add .
+
+Step-28: Commit the changes:
+git commit -m "Updated README in fork"
+
+
+
+PART–H: Push Changes from Fork to GitHub
+
+Step-29: Push the branch to your fork:
+git push origin fork-feature
+
+
+
+PART–I: Create Pull Request from Forked Repository
+
+Step-30: Open forked repository on GitHub.
+
+Step-31: Click "Compare & Pull Request".
+
+Step-32: Select base repository and branch.
+
+Step-33: Enter title and description.
+
+Step-34: Click "Create Pull Request".
+
+Step-35: Original repository owner reviews and merges the pull request.
+
+
+
+FINAL RESULT:
+Collaborative development was successfully performed using Git and GitHub. Repository cloning, feature branching, committing, pushing, forking, and pull request creation were executed successfully to simulate real-time team-based software development.
+
+
+EXPERIMENT – 4: Build and Package Java and Web Applications Using Maven
+
+OBJECTIVE:
+To build and package a Java application and a Web application using Maven and deploy the Web application using Apache Tomcat.
+
+------------------------------------------------------------
+PART–A: Maven Java Project
+------------------------------------------------------------
+
+Step-1: Open Eclipse IDE.
+
+Step-2: Click on:
+File → New → Other → Maven → Maven Project → Next.
+
+Step-3: Select "Use default Workspace location" and click Next.
+
+Step-4: In Filter, select:
+maven-archetype-quickstart.
+Click Next.
+
+Step-5: Enter:
+Group Id: as given
+Artifact Id: as given
+Version: default
+Package: default
+Click Finish.
+
+Step-6: In Console, when it asks for confirmation, type:
+y
+Press Enter.
+
+Step-7: Wait until the message “BUILD SUCCESS” is displayed in the Console.
+
+Step-8: Open:
+src → main → java → package → App.java.
+
+Step-9: Write the Java program in App.java.
+
+Step-10: Save the file using:
+Ctrl + S.
+
+Step-11: Right-click on the project root folder.
+
+Step-12: Click:
+Show In → Local Terminal → Git Bash.
+
+Step-13: Initialize Git:
+git init
+
+Step-14: Add all files:
+git add .
+
+Step-15: Commit the files:
+git commit -m "Maven Java Project Initial Commit"
+
+Step-16: Set main branch:
+git branch -M main
+
+Step-17: Add GitHub remote repository:
+git remote add origin https://github.com/username/maven-java-project.git
+
+Step-18: Push project to GitHub:
+git push -u origin main.
+
+------------------------------------------------------------
+PART–B: Maven Web Project
+------------------------------------------------------------
+
+Step-19: Open Eclipse IDE.
+
+Step-20: Click on:
+File → New → Other → Maven → Maven Project → Next.
+
+Step-21: Select "Use default Workspace location" and click Next.
+
+Step-22: In Filter, select:
+maven-archetype-webapp.
+Click Next.
+
+Step-23: Enter:
+Group Id
+Artifact Id
+Version
+Package
+Click Finish.
+
+Step-24: In Console, when asked for confirmation, type:
+y
+Press Enter.
+
+Step-25: Wait for the message “BUILD SUCCESS”.
+
+Step-26: Open:
+src → main → webapp → index.jsp / index.html.
+
+Step-27: Write the HTML code.
+
+Step-28: Save the file using:
+Ctrl + S.
+
+Step-29: Right-click on the project.
+
+Step-30: Click:
+Run As → Run on Server.
+
+Step-31: Select:
+Apache Tomcat Server.
+Click Next → Finish.
+
+Step-32: Verify the web application output in the browser using:
+http://localhost:8080/projectname
+
+Step-33: Right-click the Web project.
+
+Step-34: Click:
+Show In → Local Terminal → Git Bash.
+
+Step-35: Initialize Git:
+git init
+
+Step-36: Add all files:
+git add .
+
+Step-37: Commit the files:
+git commit -m "Maven Web Project Initial Commit"
+
+Step-38: Set main branch:
+git branch -M main
+
+Step-39: Add GitHub remote repository:
+git remote add origin https://github.com/username/maven-web-project.git
+
+Step-40: Push Web project to GitHub:
+git push -u origin main.
+
+------------------------------------------------------------
+FINAL RESULT:
+The Maven Java Project and Maven Web Project were successfully created, built, and packaged using Maven. The Web application was deployed successfully on Apache Tomcat. Both projects were uploaded to GitHub.
+
+
+EXPERIMENT – 5: Docker CLI Commands – Installing Nginx in Ubuntu Container and Serving a Web Page
+
+OBJECTIVE:
+To run an Ubuntu container using Docker, install Nginx web server inside the container, modify the default web page, and access it through the browser using localhost.
+
+------------------------------------------------------------
+Step-1: Pull the Ubuntu Image from Docker Hub
+------------------------------------------------------------
+
+Open PowerShell / Command Prompt and run:
+docker pull ubuntu:latest
+
+Verify the image:
+docker images
+
+------------------------------------------------------------
+Step-2: Run the Ubuntu Container with Port Mapping
+------------------------------------------------------------
+
+Run the container:
+docker run -it -p 9090:80 --name myubuntu ubuntu
+
+Now you will enter inside the container:
+root@container-id:/#
+
+------------------------------------------------------------
+Step-3: Update Packages and Install Nginx
+------------------------------------------------------------
+
+Update package list:
+apt update
+
+Install nano and nginx:
+apt install nano nginx -y
+
+------------------------------------------------------------
+Step-4: Navigate to Nginx Web Directory
+------------------------------------------------------------
+
+Go to nginx html folder:
+cd /usr/share/nginx/html
+
+List files:
+ls
+
+You will see:
+index.html
+
+------------------------------------------------------------
+Step-5: Edit the index.html File
+------------------------------------------------------------
+
+Open the file in nano:
+nano index.html
+
+Write or modify the HTML content.
+
+Save and exit nano using:
+CTRL + O → ENTER → CTRL + X
+
+------------------------------------------------------------
+Step-6: Start the Nginx Server
+------------------------------------------------------------
+
+Start nginx:
+nginx
+
+If already running, reload:
+nginx -s reload
+
+------------------------------------------------------------
+Step-7: Access the Web Page in Browser
+------------------------------------------------------------
+
+Open any web browser and enter:
+http://localhost:9090
+
+The modified web page will be displayed.
+
+------------------------------------------------------------
+FINAL RESULT:
+An Ubuntu container was successfully created using Docker. Nginx was installed inside the container, and the default index.html file was modified. The web page was accessed successfully through localhost.
+
+
+EXPERIMENT – 6: Advanced Docker Operations – Docker Images, Docker Compose, WordPress and Flask Application
+
+OBJECTIVE:
+To create Docker images using two methods, run multiple containers using Docker Compose, deploy WordPress with MySQL using Docker Compose, and run a Flask application using Docker and Docker Compose.
+
+------------------------------------------------------------
+PART–A: Creating Docker Images Using docker commit
+------------------------------------------------------------
+
+Step-1: Run an Ubuntu container:
+docker run -it --name imgcontainer ubuntu
+
+Step-2: Update packages inside the container:
+apt update
+
+Step-3: Install a package (example nano):
+apt install nano -y
+
+Step-4: Exit the container:
+exit
+
+Step-5: Create a Docker image from the container:
+docker commit imgcontainer myimage1
+
+Step-6: Verify the image:
+docker images
+
+------------------------------------------------------------
+PART–B: Creating Docker Image Using Dockerfile
+------------------------------------------------------------
+
+Step-7: Create a new folder:
+mkdir dockerimg
+cd dockerimg
+
+Step-8: Create a Dockerfile:
+nano Dockerfile
+
+Step-9: Write the following content in Dockerfile:
+FROM ubuntu
+RUN apt update
+RUN apt install nano -y
+CMD ["bash"]
+
+Step-10: Save and exit Dockerfile.
+
+Step-11: Build the image:
+docker build -t myimage2 .
+
+Step-12: Verify the image:
+docker images
+
+------------------------------------------------------------
+PART–C: Running Two Servers Using Docker Compose
+------------------------------------------------------------
+
+Step-13: Create a new folder:
+mkdir twoservers
+cd twoservers
+
+Step-14: Create docker-compose.yml file:
+nano docker-compose.yml
+
+Step-15: Write the following content:
+version: '3'
+services:
+  web1:
+    image: nginx
+    ports:
+      - "8081:80"
+  web2:
+    image: nginx
+    ports:
+      - "8082:80"
+
+Step-16: Save and exit the file.
+
+Step-17: Run Docker Compose:
+docker compose up -d
+
+Step-18: Verify running containers:
+docker ps
+
+Step-19: Open in browser:
+http://localhost:8081
+http://localhost:8082
+
+------------------------------------------------------------
+PART–D: Deploying WordPress with MySQL Using Docker Compose
+------------------------------------------------------------
+
+Step-20: Create a new folder:
+mkdir wordpress
+cd wordpress
+
+Step-21: Create docker-compose.yml:
+nano docker-compose.yml
+
+Step-22: Write the following content:
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wpuser
+      MYSQL_PASSWORD: wppass
+
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "8085:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wpuser
+      WORDPRESS_DB_PASSWORD: wppass
+      WORDPRESS_DB_NAME: wordpress
+
+volumes:
+  db_data:
+
+Step-23: Save and exit the file.
+
+Step-24: Start WordPress using Docker Compose:
+docker compose up -d
+
+Step-25: Open in browser:
+http://localhost:8085
+
+Step-26: Complete WordPress setup by selecting language, creating admin user, and logging in.
+
+------------------------------------------------------------
+PART–E: Deploying Flask Application Using Docker and Docker Compose
+------------------------------------------------------------
+
+Step-27: Create a new folder:
+mkdir flaskapp
+cd flaskapp
+
+Step-28: Create app.py file:
+nano app.py
+
+Step-29: Write the following content:
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Flask App Running in Docker"
+
+app.run(host="0.0.0.0", port=5000)
+
+Step-30: Save and exit the file.
+
+Step-31: Create Dockerfile:
+nano Dockerfile
+
+Step-32: Write the following content:
+FROM python:3.10
+WORKDIR /app
+COPY . .
+RUN pip install flask
+CMD ["python", "app.py"]
+
+Step-33: Save and exit the file.
+
+Step-34: Create docker-compose.yml:
+nano docker-compose.yml
+
+Step-35: Write the following content:
+version: '3'
+services:
+  flask:
+    build: .
+    ports:
+      - "5000:5000"
+
+Step-36: Save and exit the file.
+
+Step-37: Build and run the Flask application:
+docker compose up --build
+
+Step-38: Open in browser:
+http://localhost:5000
+
+------------------------------------------------------------
+FINAL RESULT:
+Docker images were successfully created using docker commit and Dockerfile. Two nginx servers were deployed using Docker Compose. WordPress with MySQL was deployed using Docker Compose. A Flask web application was successfully containerized and executed using Docker and Docker Compose.
+
+
+
+EXPERIMENT – 7: Creating a Multi-Module Maven Project
+
+OBJECTIVE:
+To create and manage a Multi-Module Maven Project by developing a Maven Java module and a Maven Web module and maintaining them under a common project structure.
+
+------------------------------------------------------------
+PART–A: Creation of Maven Java Project
+------------------------------------------------------------
+
+Step-1: Open Eclipse IDE.
+
+Step-2: Click on:
+File → New → Other → Maven → Maven Project → Next.
+
+Step-3: Select "Use default Workspace location" and click Next.
+
+Step-4: In Filter, select:
+maven-archetype-quickstart.
+Click Next.
+
+Step-5: Enter:
+Group Id: as given
+Artifact Id: as given
+Version: default
+Package: default
+Click Finish.
+
+Step-6: In the Console, when it asks for confirmation, type:
+y
+and press Enter.
+
+Step-7: Wait until the message “BUILD SUCCESS” is displayed.
+
+Step-8: Open:
+src → main → java → package → App.java.
+
+Step-9: Write the Java program in App.java.
+
+Step-10: Save the file using:
+Ctrl + S.
+
+Step-11: Right-click the project root folder.
+
+Step-12: Click:
+Show In → Local Terminal → Git Bash.
+
+Step-13: Initialize Git:
+git init
+
+Step-14: Add all files:
+git add .
+
+Step-15: Commit the project:
+git commit -m "Maven Java Module Initial Commit"
+
+Step-16: Set main branch:
+git branch -M main
+
+Step-17: Add GitHub remote repository:
+git remote add origin https://github.com/username/multi-project.git
+
+Step-18: Push Maven Java module:
+git push -u origin main
+
+------------------------------------------------------------
+PART–B: Creation of Maven Web Project (Second Module)
+------------------------------------------------------------
+
+Step-19: Open Eclipse IDE.
+
+Step-20: Click:
+File → New → Other → Maven → Maven Project → Next.
+
+Step-21: Select "Use default Workspace location" and click Next.
+
+Step-22: In Filter, select:
+maven-archetype-webapp.
+Click Next.
+
+Step-23: Enter:
+Group Id
+Artifact Id
+Version
+Package
+Click Finish.
+
+Step-24: In Console, when prompted, type:
+y
+Press Enter.
+
+Step-25: Wait until “BUILD SUCCESS” is displayed.
+
+Step-26: Open:
+src → main → webapp → index.jsp or index.html.
+
+Step-27: Write the HTML code.
+
+Step-28: Save the file using:
+Ctrl + S.
+
+------------------------------------------------------------
+PART–C: Running the Maven Web Project
+------------------------------------------------------------
+
+Step-29: Right-click the Web Project.
+
+Step-30: Click:
+Run As → Run on Server.
+
+Step-31: Select:
+Apache Tomcat Server.
+Click Finish.
+
+Step-32: Verify the output in the browser using:
+http://localhost:8080/projectname
+
+------------------------------------------------------------
+PART–D: Pushing Maven Web Project to GitHub
+------------------------------------------------------------
+
+Step-33: Right-click the Web project.
+
+Step-34: Click:
+Show In → Local Terminal → Git Bash.
+
+Step-35: Initialize Git:
+git init
+
+Step-36: Add all files:
+git add .
+
+Step-37: Commit the project:
+git commit -m "Maven Web Module Initial Commit"
+
+Step-38: Set main branch:
+git branch -M main
+
+Step-39: Add GitHub remote repository:
+git remote add origin https://github.com/username/multi-project.git
+
+Step-40: Push Maven Web module:
+git push -u origin main
+
+------------------------------------------------------------
+FINAL RESULT:
+A Multi-Module Maven Project was successfully created with a Maven Java module and a Maven Web module. Both modules were built successfully, the Web module was deployed on Apache Tomcat, and the complete project was pushed to GitHub.
+
+
+EXPERIMENT – 8: Jenkins Automation for Maven Java and Maven Web Projects
+
+OBJECTIVE:
+To automate the build, test, and deployment of Maven Java and Maven Web projects using Jenkins CI/CD.
+
+------------------------------------------------------------
+PART–A: Jenkins Automation for Maven Java Project
+------------------------------------------------------------
+
+Step-1: Open Jenkins in a browser using:
+http://localhost:8080
+
+Step-2: Click on:
+New Item
+
+Step-3: Enter Job Name:
+maven_java
+
+Step-4: Select:
+Freestyle Project
+Click OK.
+
+Step-5: In Source Code Management, select:
+Git
+
+Step-6: Enter Repository URL:
+https://github.com/username/maven-java-project.git
+
+Step-7: Enter Branch:
+main
+
+Step-8: Scroll to Build Steps and click:
+Add Build Step → Invoke top-level Maven targets
+
+Step-9: Enter Goals:
+clean
+
+Step-10: Add another Build Step:
+Invoke top-level Maven targets
+
+Step-11: Enter Goals:
+install
+
+Step-12: Scroll to Post-Build Actions → Click:
+Archive the artifacts
+Enter:
+**/*
+
+Step-13: Add Post-Build Action:
+Build other projects
+Enter:
+MavenJava_Test
+
+Step-14: Click:
+Save
+
+------------------------------------------------------------
+PART–B: Jenkins Test Job for Maven Java Project
+------------------------------------------------------------
+
+Step-15: Click:
+New Item
+
+Step-16: Enter Job Name:
+MavenJava_Test
+
+Step-17: Select:
+Freestyle Project
+Click OK.
+
+Step-18: Under Build Environment, tick:
+Delete workspace before build starts
+
+Step-19: Click:
+Add Build Step → Copy artifacts from another project
+
+Step-20: Enter Project Name:
+maven_java
+
+Step-21: Enter Artifacts to copy:
+**/*
+
+Step-22: Add Post-Build Action:
+Archive the artifacts
+Enter:
+**/*
+
+Step-23: Click:
+Save
+
+Step-24: Click:
+Build Now on maven_java job
+
+------------------------------------------------------------
+PART–C: Jenkins Automation for Maven Web Build Job
+------------------------------------------------------------
+
+Step-25: Click:
+New Item
+
+Step-26: Enter Job Name:
+maven_web_build
+
+Step-27: Select:
+Freestyle Project
+Click OK.
+
+Step-28: In Source Code Management, select:
+Git
+
+Step-29: Enter Repository URL:
+https://github.com/username/maven-web-project.git
+
+Step-30: Enter Branch:
+main
+
+Step-31: Add Build Step:
+Invoke Maven → clean
+
+Step-32: Add Build Step:
+Invoke Maven → install
+
+Step-33: Add Post-Build Action:
+Archive the artifacts
+Enter:
+**/*
+
+Step-34: Add Post-Build Action:
+Build other projects
+Enter:
+maven_web_test
+
+Step-35: Click:
+Save
+
+------------------------------------------------------------
+PART–D: Jenkins Test Job for Maven Web Project
+------------------------------------------------------------
+
+Step-36: Click:
+New Item
+
+Step-37: Enter Job Name:
+maven_web_test
+
+Step-38: Select:
+Freestyle Project
+Click OK.
+
+Step-39: Under Build Environment, tick:
+Delete workspace before build starts
+
+Step-40: Add Build Step:
+Copy artifacts from another project
+Project Name:
+maven_web_build
+Artifacts:
+**/*
+
+Step-41: Add Build Step:
+Invoke Maven → test
+
+Step-42: Add Post-Build Action:
+Archive the artifacts
+Enter:
+**/*
+
+Step-43: Add Post-Build Action:
+Build other projects
+Enter:
+maven_web_deploy
+
+Step-44: Tick:
+Trigger only if build is stable
+
+Step-45: Click:
+Save
+
+------------------------------------------------------------
+PART–E: Jenkins Deployment Job for Maven Web Project
+------------------------------------------------------------
+
+Step-46: Click:
+New Item
+
+Step-47: Enter Job Name:
+maven_web_deploy
+
+Step-48: Select:
+Freestyle Project
+Click OK.
+
+Step-49: Under Build Environment, tick:
+Delete workspace before build starts
+
+Step-50: Add Build Step:
+Copy artifacts from another project
+Project Name:
+maven_web_test
+Artifacts:
+**/*
+
+Step-51: Add Post-Build Action:
+Deploy war/ear to a container
+
+Step-52: Enter WAR/EAR file:
+**/*.war
+
+Step-53: Enter Context Path:
+webapp
+
+Step-54: Select Container:
+Tomcat 9.x Remote
+
+Step-55: Enter Tomcat URL:
+http://localhost:8080
+
+Step-56: Add Tomcat Credentials (Username & Password)
+
+Step-57: Click:
+Save
+
+Step-58: Run:
+maven_web_build job
+
+Step-59: Verify automatic execution of:
+maven_web_build → maven_web_test → maven_web_deploy
+
+------------------------------------------------------------
+FINAL RESULT:
+Jenkins was successfully configured to automate the build, test, and deployment of Maven Java and Maven Web projects. The complete CI/CD pipeline executed successfully and the Web application was deployed on Apache Tomcat.
+
+
+EXPERIMENT – 9: Jenkins Pipeline Using Script (Jenkinsfile)
+
+OBJECTIVE:
+To create a CI/CD pipeline using Jenkins Pipeline Script to automatically fetch code from GitHub, build, test, and package a Maven project.
+
+------------------------------------------------------------
+Step-1: Open Jenkins in Browser
+------------------------------------------------------------
+
+Open any browser and go to:
+http://localhost:8080
+
+------------------------------------------------------------
+Step-2: Create a New Pipeline Job
+------------------------------------------------------------
+
+Click on:
+New Item
+
+Enter Job Name:
+pipeline_script
+
+Select:
+Pipeline
+
+Click:
+OK
+
+------------------------------------------------------------
+Step-3: Configure the Pipeline Job
+------------------------------------------------------------
+
+Scroll to the Pipeline section.
+
+In Definition, select:
+Pipeline script
+
+------------------------------------------------------------
+Step-4: Enter the Pipeline Script
+------------------------------------------------------------
+
+Paste the following script in the Script box:
+
+pipeline {
+    agent any
+
+    tools {
+        maven 'MAVEN_HOME'
+    }
+
+    stages {
+
+        stage('Checkout Code') {
+            steps {
+                git branch: 'main',
+                url: 'https://github.com/username/your-repo-name.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                bat 'mvn clean compile'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat 'mvn test'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                bat 'mvn package'
+            }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts artifacts: '**/target/*.jar'
+        }
+        success {
+            echo 'Build Successful'
+        }
+        failure {
+            echo 'Build Failed'
+        }
+    }
+}
+
+------------------------------------------------------------
+Step-5: Save the Pipeline Job
+------------------------------------------------------------
+
+Click:
+Save
+
+------------------------------------------------------------
+Step-6: Run the Pipeline
+------------------------------------------------------------
+
+Click:
+Build Now
+
+------------------------------------------------------------
+Step-7: Verify Pipeline Execution
+------------------------------------------------------------
+
+Click on the Build Number.
+
+Open:
+Console Output
+
+Verify the execution of:
+Checkout → Build → Test → Package
+
+Ensure the final status shows:
+Finished: SUCCESS
+
+------------------------------------------------------------
+Step-8: Verify Generated Artifacts
+------------------------------------------------------------
+
+Check the target folder in Jenkins workspace for the generated JAR/WAR file.
+
+------------------------------------------------------------
+FINAL RESULT:
+A Jenkins Pipeline was successfully created using a Pipeline Script. The source code was fetched from GitHub, built using Maven, tested, packaged, and the build artifacts were archived successfully.
+
+
+EXPERIMENT – 10: Kubernetes Using Minikube and Deployment of Nginx Application
+
+OBJECTIVE:
+To create a local Kubernetes cluster using Minikube, deploy an Nginx web server application, expose it as a service, and access it through a web browser.
+
+------------------------------------------------------------
+Step-1: Start Minikube
+------------------------------------------------------------
+
+Open Command Prompt / PowerShell and run:
+minikube start
+
+Wait until Minikube starts successfully.
+
+------------------------------------------------------------
+Step-2: Check Minikube Status
+------------------------------------------------------------
+
+minikube status
+
+Ensure host, kubelet, and apiserver are running.
+
+------------------------------------------------------------
+Step-3: Create Nginx Deployment
+------------------------------------------------------------
+
+kubectl create deployment nginx-deploy --image=nginx
+
+------------------------------------------------------------
+Step-4: Verify Deployment
+------------------------------------------------------------
+
+Check deployment:
+kubectl get deployments
+
+Check pods:
+kubectl get pods
+
+------------------------------------------------------------
+Step-5: Expose the Deployment as a Service
+------------------------------------------------------------
+
+kubectl expose deployment nginx-deploy --type=NodePort --port=80
+
+------------------------------------------------------------
+Step-6: Get Service Details
+------------------------------------------------------------
+
+kubectl get services
+
+Note the NodePort number displayed.
+
+------------------------------------------------------------
+Step-7: Get Minikube IP Address
+------------------------------------------------------------
+
+minikube ip
+
+------------------------------------------------------------
+Step-8: Access Nginx in Browser (Manual Method)
+------------------------------------------------------------
+
+Open any browser and enter:
+http://<MINIKUBE-IP>:<NODEPORT>
+
+------------------------------------------------------------
+Step-9: Access Nginx Using Minikube Service Command
+------------------------------------------------------------
+
+minikube service nginx-deploy
+
+This command automatically opens the Nginx page in the browser.
+
+------------------------------------------------------------
+Step-10: Verify Kubernetes Resources (For Record)
+------------------------------------------------------------
+
+kubectl get all
+kubectl describe pod nginx-deploy
+kubectl describe service nginx-deploy
+
+------------------------------------------------------------
+Step-11: Delete the Deployment and Service (Cleanup)
+------------------------------------------------------------
+
+kubectl delete service nginx-deploy
+kubectl delete deployment nginx-deploy
+
+------------------------------------------------------------
+Step-12: Stop Minikube
+------------------------------------------------------------
+
+minikube stop
+
+------------------------------------------------------------
+FINAL RESULT:
+A local Kubernetes cluster was created successfully using Minikube. The Nginx web server was deployed as a Kubernetes deployment, exposed using a NodePort service, and accessed successfully through a web browser.
+
+
+EXPERIMENT – 11: Jenkins CI Using GitHub Webhook and Email Notification
+
+OBJECTIVE:
+To implement Continuous Integration in Jenkins using GitHub Webhook with ngrok and configure email notification for build status using Gmail SMTP.
+
+------------------------------------------------------------
+PART–A: Jenkins CI Using GitHub Webhook with ngrok
+------------------------------------------------------------
+
+Step-1: Start Jenkins Server.
+
+Open browser and go to:
+http://localhost:8080
+
+------------------------------------------------------------
+Step-2: Start ngrok to Expose Jenkins
+------------------------------------------------------------
+
+Open Command Prompt / PowerShell and run:
+ngrok http 8080
+
+Copy the generated HTTPS URL.
+
+------------------------------------------------------------
+Step-3: Configure Jenkins Job
+------------------------------------------------------------
+
+Open Jenkins Dashboard.
+
+Click the Jenkins job.
+
+Click:
+Configure
+
+Under Source Code Management:
+Select Git.
+
+Enter Repository URL:
+https://github.com/username/repository-name.git
+
+Enter Branch:
+main
+
+------------------------------------------------------------
+Step-4: Enable GitHub Webhook Trigger
+------------------------------------------------------------
+
+Scroll to Build Triggers.
+
+Tick:
+GitHub hook trigger for GITScm polling
+
+Click:
+Save
+
+------------------------------------------------------------
+Step-5: Add Webhook in GitHub Repository
+------------------------------------------------------------
+
+Open the GitHub repository.
+
+Click:
+Settings → Webhooks → Add webhook
+
+Fill the details:
+
+Payload URL:
+https://<ngrok-url>/github-webhook/
+
+Content type:
+application/json
+
+Event:
+Just the push event
+
+Click:
+Add webhook
+
+Verify that a green tick appears.
+
+------------------------------------------------------------
+Step-6: Test CI Automation
+------------------------------------------------------------
+
+Open any file in GitHub repository.
+
+Make a small change and click:
+Commit changes
+
+Go to Jenkins Dashboard.
+
+Verify that Jenkins job starts automatically.
+
+Open Console Output and check:
+Started by GitHub push
+
+------------------------------------------------------------
+PART–B: Jenkins Email Notification Using Gmail SMTP
+------------------------------------------------------------
+
+Step-7: Create Gmail App Password
+------------------------------------------------------------
+
+Open Gmail account.
+
+Go to:
+Google Account → Security
+
+Enable:
+2-Step Verification
+
+Go to:
+App Passwords
+
+Select:
+App → Mail
+Device → Other (Jenkins)
+
+Click:
+Generate
+
+Copy the 16-digit App Password.
+
+------------------------------------------------------------
+Step-8: Install Email Extension Plugin in Jenkins
+------------------------------------------------------------
+
+Jenkins Dashboard → Manage Jenkins → Manage Plugins
+
+Go to:
+Available Tab
+
+Search:
+Email Extension Plugin
+
+Install:
+Email Extension Plugin
+
+Restart Jenkins.
+
+------------------------------------------------------------
+Step-9: Configure Global Email Settings in Jenkins
+------------------------------------------------------------
+
+Jenkins Dashboard → Manage Jenkins → Configure System
+
+Under E-mail Notification:
+
+SMTP Server:
+smtp.gmail.com
+
+Tick:
+Use SMTP Authentication
+
+Username:
+your-email@gmail.com
+
+Password:
+App Password
+
+SMTP Port:
+465
+
+Tick:
+Use SSL
+
+Reply-To Address:
+your-email@gmail.com
+
+Click:
+Test configuration by sending test e-mail
+
+Verify that test mail is received.
+
+------------------------------------------------------------
+Step-10: Configure Extended Email Notification
+------------------------------------------------------------
+
+Under Extended E-mail Notification:
+
+SMTP Server:
+smtp.gmail.com
+
+SMTP Port:
+465
+
+Tick:
+Use SSL
+
+Default Content Type:
+text/html
+
+Add Triggers:
+Success
+Failure
+
+Click:
+Save
+
+------------------------------------------------------------
+Step-11: Add Email Notification to Jenkins Job
+------------------------------------------------------------
+
+Open Jenkins Job.
+
+Click:
+Configure
+
+Scroll to:
+Post-Build Actions
+
+Click:
+Add post-build action → Editable Email Notification
+
+Enter:
+
+Project Recipient List:
+your-email@gmail.com
+
+Select Triggers:
+Success
+Failure
+
+Content Type:
+text/html
+
+Click:
+Save
+
+------------------------------------------------------------
+Step-12: Test Email Notification
+------------------------------------------------------------
+
+Click:
+Build Now on Jenkins Job
+
+Wait for the build to complete.
+
+Check Gmail Inbox.
+
+Verify that:
+Success or Failure email is received.
+
+------------------------------------------------------------
+FINAL RESULT:
+Continuous Integration was successfully implemented using Jenkins and GitHub Webhook with ngrok. Every commit in GitHub automatically triggered the Jenkins build. Email notifications were successfully configured using Gmail SMTP to inform the build status.
+
+
+EXPERIMENT – 12: Creation of Virtual Machine and Deployment of Web Application Using AWS EC2
+
+OBJECTIVE:
+To create an Ubuntu virtual machine using AWS EC2, install required software, clone a project from GitHub, build a Docker image, run a container, and deploy a web application successfully.
+
+------------------------------------------------------------
+PART–A: Launching an Ubuntu EC2 Instance
+------------------------------------------------------------
+
+Step-1: Open browser and go to:
+https://aws.amazon.com
+
+Step-2: Click:
+Sign in to the Console
+
+Step-3: Login using AWS account credentials.
+
+Step-4: In the AWS Console search bar, type:
+EC2
+Click on EC2.
+
+Step-5: Click:
+Instances → Launch Instance
+
+Step-6: Under Name and Tags, enter:
+week-12
+
+Step-7: Under Application and OS Images (AMI), select:
+Ubuntu Server 22.04 LTS (64-bit)
+
+Step-8: Under Instance Type, select:
+t2.micro (Free Tier Eligible)
+
+Step-9: Under Key Pair, click:
+Create new key pair
+
+Enter Key Pair Name:
+week12-key
+
+Select:
+RSA
+
+Key file format:
+.pem
+
+Click:
+Create key pair
+(The .pem file will be downloaded.)
+
+Step-10: Under Network Settings, Click:
+Create security group
+
+Allow the following:
+SSH – Port 22 – Anywhere
+HTTP – Port 80 – Anywhere
+Custom TCP – Port 8081 – Anywhere
+
+Step-11: Keep Storage as:
+8 GB (Default)
+
+Step-12: Click:
+Launch Instance
+
+Step-13: Go to EC2 → Instances and copy:
+Public IPv4 Address
+
+------------------------------------------------------------
+PART–B: Connecting to EC2 Instance Using SSH
+------------------------------------------------------------
+
+Step-14: Open Git Bash / Terminal on your local system.
+
+Step-15: Go to the folder where .pem file is located.
+
+Step-16: Set the permission for key file:
+chmod 400 week12-key.pem
+
+Step-17: Connect to the EC2 instance:
+ssh -i week12-key.pem ubuntu@<PUBLIC-IP>
+
+------------------------------------------------------------
+PART–C: Installing Docker and Git in Ubuntu Server
+------------------------------------------------------------
+
+Step-18: Update the system:
+sudo apt update
+
+Step-19: Install Docker:
+sudo apt install docker.io -y
+
+Step-20: Start Docker service:
+sudo systemctl start docker
+sudo systemctl enable docker
+
+Step-21: Install Git:
+sudo apt install git -y
+
+Step-22: Verify installations:
+docker --version
+git --version
+
+------------------------------------------------------------
+PART–D: Cloning the Project from GitHub
+------------------------------------------------------------
+
+Step-23: Clone the GitHub repository:
+git clone https://github.com/username/maven-web-project.git
+
+Step-24: Enter the project directory:
+cd maven-web-project
+
+------------------------------------------------------------
+PART–E: Creating Dockerfile and Building Docker Image
+------------------------------------------------------------
+
+Step-25: Create a Dockerfile:
+nano Dockerfile
+
+Step-26: Add the following content in Dockerfile:
+
+FROM tomcat:9.0
+COPY target/*.war /usr/local/tomcat/webapps/webapp.war
+
+Save using:
+CTRL+O → ENTER → CTRL+X
+
+Step-27: Build the Docker image:
+sudo docker build -t webapp-image .
+
+------------------------------------------------------------
+PART–F: Running the Docker Container
+------------------------------------------------------------
+
+Step-28: Run the Docker container:
+sudo docker run -d -p 8081:8080 webapp-image
+
+Step-29: Verify running container:
+sudo docker ps
+
+------------------------------------------------------------
+PART–G: Accessing the Web Application
+------------------------------------------------------------
+
+Step-30: Open any browser on your local system.
+
+Step-31: Enter the following URL:
+http://<PUBLIC-IP>:8081/webapp
+
+The deployed web application will be displayed.
+
+------------------------------------------------------------
+FINAL RESULT:
+An Ubuntu Virtual Machine was successfully created on AWS EC2. Docker and Git were installed in the instance. The Maven web application was cloned from GitHub, containerized using Docker, and deployed successfully. The web application was accessed through the public IP address of the EC2 instance.
